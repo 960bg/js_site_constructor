@@ -1,22 +1,23 @@
 export const model = [
   {
-    type: 'title',
-    value: 'Hello world from js!',
+    type: 'f_title',
+    data: 'Hello world from js!',
+
   },
   {
-    type: 'text',
-    value: 'text text text js!',
+    type: 'f_text',
+    data: 'text text text js!',
   },
   {
-    type: 'columns',
-    value: [
+    type: 'f_columns',
+    data: [
       'one',
       'two',
       'three',
     ],
   },
   {
-    type: 'image',
-    value: './src/assets/cofe.jpg',
+    type: 'f_image',
+    data: './src/assets/cofe.jpg',
   },
 ];
