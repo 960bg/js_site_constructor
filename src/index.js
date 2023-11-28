@@ -1,20 +1,47 @@
 import { model } from './model.js';
 import {Site} from './classes/site.js';
-// import { title, text, columns, image } from './templates.js';
-import { templates } from './templates.js';
-
-import { TitleBlock, TextBlock, ColumnsBlock, ImageBlock } from './classes/blocks.js';
 //импорт стилей в js для взаимодействия с js
 import './style/style.css';
 
-const $site = document.querySelector('#site');
+const site = new Site('#site');
 
+site.render(model);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --start СТАРАЯ РЕАЛИЗАЦИЯ КЛАССЫ - без использования абстракции класса Site 
+
+
+// const $site = document.querySelector('#site');
+
+// import { title, text, columns, image } from './templates.js';
+// import { templates } from './templates.js';
+
+// import { TitleBlock, TextBlock, ColumnsBlock, ImageBlock } from './classes/blocks.js';
 
 // для каждого объекта вызываем его метод toHtml() для добавления полей объекта 
 // на web-страницу
-model.forEach(block => {
-  $site.insertAdjacentHTML('beforeend', block.toHtml());
-});
+// model.forEach(block => {
+//   $site.insertAdjacentHTML('beforeend', block.toHtml());
+// });
+
+// --end СТАРАЯ РЕАЛИЗАЦИЯ КЛАССЫ - без использования абстракции класса Site 
+
+
+
+
+
 
 // СТАРАЯ РЕАЛИЗАЦИЯ БЕЗ КЛАССОВ - через объекты
 

@@ -32,7 +32,11 @@ export class TextBlock extends Block {
   }
 
   toHtml() {
-    return row(col(`<p>${this.value}</p>`));
+    const { tag = 'p', styles } = this.options;
+    return row(col(
+      `<${tag} style="${css(styles)}">
+    ${this.value}
+    </${tag}>`));
   }
 }
 
