@@ -2,12 +2,15 @@ import { model } from './model.js';
 // import { title, text, columns, image } from './templates.js';
 import { templates } from './templates.js';
 
+//импорт стилей в js для взаимодействия с js
+import './style/style.css';
+
 const $site = document.querySelector('#site');
 
 
 
-console.log(templates['f_title']({ value: 'tddditle' }));
-
+// console.log(templates['f_title']({ value: 'tddditle' }));
+// $site.insertAdjacentHTML('beforeend', templates['f_title']({ value: 'tddditle  beforeend' }));
 
 model.forEach(block => {
   //** */   здесь для каждого block из model импортированного из model.js
@@ -41,14 +44,19 @@ model.forEach(block => {
   // и поле объекта по которому обращаемся там указали value 
 
   // let html = templates[block.type]({ value: block.data });
+
+
   // проверка что ф-я существует
   if (templates[block.type]) {
-    $site.insertAdjacentHTML('beforeend', templates[block.type]({ value: block.data }));
+    $site.insertAdjacentHTML('beforeend', templates[block.type](block));
+    // $site.insertAdjacentHTML('beforeend', templates[block.type]({
+    //   value: block.data,
+    //   size: block?.size,
+    // }));
     // html = templates[block.type]({ value: block.data });
   }
 
-  console.log(templates[block.type]({ value: block.data }));
-
+  // console.log(templates[block.type](block));
   // switch (block.type) {
 
   //   case 'title':

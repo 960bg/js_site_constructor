@@ -1,9 +1,15 @@
-import { row, col } from './utils.js';
+import { row, col, img, css } from './utils.js';
 
 
 //вставить в html заголовок
 function f_title(block) {
-  return row(col(block.value));
+  const { tag = 'h1', styles } = block.options;
+  // const tag = block.options.tag ? block.options.tag : 'h1';
+  // const styles = block.options.styles ?? '';
+  return row(col(
+    `<${tag} style="${css(styles)}">
+    ${block.value}
+    </${tag}>`));
   //   `<div class="row">
   //   <div class="col-sm">
   //     <h1>${block.value}</h1>
@@ -13,7 +19,7 @@ function f_title(block) {
 
 //вставить в html текст
 function f_text(block) {
-  return row(col(block.value));
+  return row(col(`<p>${block.value}</p>`));
   //   `<div class="row">
   // <div class="col-sm">
   //   <p>${block.value}</p>
@@ -22,8 +28,9 @@ function f_text(block) {
 }
 
 //вставить в html колонки текста
-function f_columns(block) {
-  let str = row(block.value.map(item => col(item)).join(''));
+function f_columnsOld(block) {
+  const html = block.value.map(item => col(item)).join('');
+  let str = row(html);
 
 
   // `<div class="row">`;
@@ -32,22 +39,41 @@ function f_columns(block) {
   return str;
 }
 
+//вставить в html колонки текста
+function f_columns(block) {
+  const { tag = 'h1', styles } = block.options;
+
+  const toHtml = (value) => `<${tag} style="${css(styles)}">
+                  ${value}
+                  </${tag}>`;
+
+  const html = block.value.map(value => col(toHtml(value))).join('');
+  return row(html);
+
+  // row(col(
+  //   `<${tag} style="${css(styles)}">
+  //   ${block.value}
+  //   </${tag}>`));
+  // `<div class="row">`;
+  // str += block.value.map(item => `<div class="col-sm"> ${item} </div>`).join('');
+  // str += `</div>`;
+
+}
+
 //вставить в html картинку
 function f_image(block) {
-  let str = row(`<img src="${block.value}" />`);
-
-
+  return row(img(block));
   // `<div class="row">
   // <img src="${block.value}" />
   // </div>`;
-  return str;
+
 }
 
 
 //объект с функциями для вызова без использования циклов
 export const templates = {
-  f_title: f_title,
-  f_text: f_text,
-  f_columns: f_columns,
-  f_image: f_image,
+  f_title,
+  f_text,
+  f_columns,
+  f_image,
 } 
