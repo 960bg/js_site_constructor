@@ -8,7 +8,7 @@ export function col(content) {
 
 export function img(content) {
   if (content.value)
-    return `<img src="${content.value}" style="${css(content.options.styles)}" alt="${content.alt}"/>`;
+    return `<img src="${content.value}" style="${css(content.options.styles)}" alt="${content.options.alt}"/>`;
 }
 
 export function css(styles = {}) {
