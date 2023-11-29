@@ -1,4 +1,4 @@
-import { block } from '../utils';
+import { createForm } from '../utils';
 import { Blocks } from './blocks.js';
 import { Site } from './site.js';
 
@@ -17,11 +17,11 @@ export class Sidebar {
 
   get template() {
     return [
-      block('TextBlock'),
-      block('TitleBlock'),
-      block('ColumnsBlock'),
-      block('ImageBlock'),
-    ];
+      createForm('TextBlock'),
+      createForm('TitleBlock'),
+      createForm('ColumnsBlock'),
+      createForm('ImageBlock'),
+    ].join('');
   }
 
   add(event) {
@@ -35,19 +35,7 @@ export class Sidebar {
     const newBlock = new Blocks[type](value, { styles });
 
     const site = new Site('#site');
-
     site.render([newBlock]);
-    //  this.$element.insertAdjacentHTML('beforeend', block.toHtml());
-
-    const elementList = document.querySelectorAll('form');
-    console.log('elementList');
-    console.log(elementList);
-
-
-
-
-
-
   }
 }
 

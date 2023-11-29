@@ -1,11 +1,7 @@
 import imagePath from './assets/homer.jpg';
-import { TitleBlock, TextBlock, ColumnsBlock, ImageBlock } from './classes/blocks.js';
 import { Blocks } from './classes/blocks.js';
-// import { img } from './utils.js';
+
 const textCreateBlockHtml = 'HTML страницу формирует JS, исходные данные для блоков записаны в файле model.js.';
-// "HTML страницу формирует JS, исходные данные для блоков записаны в файле model.js.";
-
-
 
 export const model = [
   new Blocks.TitleBlock('Конструктор сайтов на JS', {
@@ -17,7 +13,7 @@ export const model = [
     },
   }),
 
-  new TextBlock(textCreateBlockHtml, {
+  new Blocks.TextBlock(textCreateBlockHtml, {
     tag: 'p',
     styles: {
       background: 'linear-gradient(to left, #f2994a, #f2c94c)',
@@ -27,7 +23,7 @@ export const model = [
     },
   },),
 
-  new ColumnsBlock([
+  new Blocks.ColumnsBlock([
     'файл templates.js - функции обертки в HTML объектов из файла model.js',
     'файл utils.js - функции вызываемые из templates.js',
     'файл blocks.js - классы для объектов блоков из model.js',
@@ -41,7 +37,7 @@ export const model = [
     },
   },),
 
-  new ImageBlock(imagePath, {
+  new Blocks.ImageBlock(imagePath, {
     tag: 'img',
     alt: 'Картинка Гомер Симпсон',
     styles: {
@@ -56,7 +52,7 @@ export const model = [
     },
   },),
 
-  new ColumnsBlock([
+  new Blocks.ColumnsBlock([
     'Стили: для сетки используется bootstrap.',
     'Стили: остальные стили прописываются в файле model.js для каждого блока в секции styles',
     'HTML страницу формирует JS',

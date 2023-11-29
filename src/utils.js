@@ -11,6 +11,17 @@ export function img(content) {
     return `<img src="${content.value}" style="${css(content.options.styles)}" alt="${content.options.alt}"/>`;
 }
 
+export function inHtmlCode(value, styles, tag) {
+  const htmlCode = `
+    <${tag} style="${css(styles)}">
+    ${value}
+    </${tag}>
+    `;
+  return htmlCode;
+}
+
+
+
 export function css(styles = {}) {
   // если пришла строка - вернем ее же,
   if (typeof styles === 'string') {
@@ -23,7 +34,7 @@ export function css(styles = {}) {
   return Object.keys(styles).map(toString).join('');
 }
 
-export function block(type) {
+export function createForm(type) {
   return `
   <form name="${type}">
   <h5>${type}</h5>
