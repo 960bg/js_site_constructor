@@ -38,3 +38,18 @@ export function block(type) {
 <hr>
 `;
 }
+
+export function stringToImg(value, styles, tag = 'img', alt = 'Картинка') {
+  if (typeof value !== 'string') {
+    console.log('stringToImg(): ' + 'В параметре должна быть передана строка');
+  }
+  return {
+    value,
+    options: {
+      tag,
+      alt,
+      styles,
+    }
+  }
+}
+
