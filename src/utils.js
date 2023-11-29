@@ -16,3 +16,19 @@ export function css(styles = {}) {
 
   return Object.keys(styles).map(toString).join('');
 }
+
+export function block(type) {
+  return `
+  <form name="${type}">
+  <h5>${type}</h5>
+  <div class="form-group">
+    <input class="form-control form-control-sm" type="text" name="value" placeholder="value">
+  </div>
+  <div class="form-group">
+    <input class="form-control form-control-sm" type="text" name="styles" placeholder="value">
+  </div>
+  <button class="btn btn-primary btn-sm" type="submit" >Добавить</button>
+</form>
+<hr>
+`;
+}
