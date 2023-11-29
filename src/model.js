@@ -1,5 +1,6 @@
 import imagePath from './assets/homer.jpg';
 import { TitleBlock, TextBlock, ColumnsBlock, ImageBlock } from './classes/blocks.js';
+import { Blocks } from './classes/blocks.js';
 // import { img } from './utils.js';
 const textCreateBlockHtml = 'HTML страницу формирует JS, исходные данные для блоков записаны в файле model.js.';
 // "HTML страницу формирует JS, исходные данные для блоков записаны в файле model.js.";
@@ -7,7 +8,7 @@ const textCreateBlockHtml = 'HTML страницу формирует JS, исх
 
 
 export const model = [
-  new TitleBlock('Конструктор сайтов на JS', {
+  new Blocks.TitleBlock('Конструктор сайтов на JS', {
     tag: 'h2',
     styles: {
       background: 'linear-gradient(to right, #ff0099, #493240)',

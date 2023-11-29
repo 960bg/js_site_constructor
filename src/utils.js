@@ -12,6 +12,12 @@ export function img(content) {
 }
 
 export function css(styles = {}) {
+  // если пришла строка - вернем ее же,
+  if (typeof styles === 'string') {
+    return styles;
+  }
+
+  // если пришел объект - преобразование к строке
   const toString = (key) => `${key}: ${styles[key]};`;
 
   return Object.keys(styles).map(toString).join('');
@@ -25,7 +31,7 @@ export function block(type) {
     <input class="form-control form-control-sm" type="text" name="value" placeholder="value">
   </div>
   <div class="form-group">
-    <input class="form-control form-control-sm" type="text" name="styles" placeholder="value">
+    <input class="form-control form-control-sm" type="text" name="styles" placeholder="styles">
   </div>
   <button class="btn btn-primary btn-sm" type="submit" >Добавить</button>
 </form>

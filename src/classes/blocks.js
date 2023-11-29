@@ -48,12 +48,19 @@ export class ColumnsBlock extends Block {
   toHtml() {
     const { tag = 'h1', styles } = this.options;
 
-    const inHtml = (blockValue) => `<${tag} 
-                                      style="${css(styles)}">
-                                      ${blockValue}
-                                    </${tag}>`;
+    const inHtml = (blockValue) => `
+    <${tag} 
+      style="${css(styles)}">
+      ${blockValue}
+      </${tag}>
+     `;
 
-    const html = this.value.map(blockValue => col(inHtml(blockValue))).join('');
+    // если пришел не массив с колонками а строка 
+    const ArgForColumns = (typeof this.value === 'string')
+      ? this.value.split(',')
+      : this.value;
+
+    const html = ArgForColumns.map(blockValue => col(inHtml(blockValue))).join('');
     return row(html);
   }
 }
@@ -66,4 +73,11 @@ export class ImageBlock extends Block {
   toHtml() {
     return row(img(this));
   }
+}
+
+export const Blocks = {
+  ImageBlock,
+  ColumnsBlock,
+  TextBlock,
+  TitleBlock,
 }
