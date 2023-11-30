@@ -1,4 +1,4 @@
-var t,e=globalThis,r={},o={},s=e.parcelRequire5ad8;null==s&&((s=function(t){if(t in r)return r[t].exports;if(t in o){var e=o[t];delete o[t];var s={id:t,exports:{}};return r[t]=s,e.call(s.exports,s,s.exports),s.exports}var n=Error("Cannot find module '"+t+"'");throw n.code="MODULE_NOT_FOUND",n}).register=function(t,e){o[t]=e},e.parcelRequire5ad8=s),(0,s.register)("27Lyk",function(t,e){Object.defineProperty(t.exports,"register",{get:()=>r,set:t=>r=t,enumerable:!0,configurable:!0});var r,o=new Map;r=function(t,e){for(var r=0;r<e.length-1;r+=2)o.set(e[r],{baseUrl:t,path:e[r+1]})}}),s("27Lyk").register(new URL("",import.meta.url).toString(),JSON.parse('["7GeUN","index.0af24e75.js","185j8","homer.432f1a35.jpg","TJjPh","index.b90349cd.css"]'));var n={};function l(t){return`<div class="row"> ${t} </div>`}function a(t){return`<div class="col-sm"> ${t} </div>`}function i(t){if(t.value)return`<img src="${t.value}" style="${u(t.options.styles)}" alt="${t.options.alt}"/>`}function c(t,e,r){let o=`
+var t,e=globalThis,r={},o={},s=e.parcelRequire5ad8;null==s&&((s=function(t){if(t in r)return r[t].exports;if(t in o){var e=o[t];delete o[t];var s={id:t,exports:{}};return r[t]=s,e.call(s.exports,s,s.exports),s.exports}var n=Error("Cannot find module '"+t+"'");throw n.code="MODULE_NOT_FOUND",n}).register=function(t,e){o[t]=e},e.parcelRequire5ad8=s),(0,s.register)("27Lyk",function(t,e){Object.defineProperty(t.exports,"register",{get:()=>r,set:t=>r=t,enumerable:!0,configurable:!0});var r,o=new Map;r=function(t,e){for(var r=0;r<e.length-1;r+=2)o.set(e[r],{baseUrl:t,path:e[r+1]})}}),s("27Lyk").register(new URL("",import.meta.url).toString(),JSON.parse('["7GeUN","index.3093ac92.js","185j8","homer.432f1a35.jpg","TJjPh","index.3ec1d245.css"]'));var n={};function l(t){return`<div class="row"> ${t} </div>`}function a(t){return`<div class="col-sm"> ${t} </div>`}function i(t){if(t.value)return`<img src="${t.value}" style="${u(t.options.styles)}" alt="${t.options.alt}"/>`}function c(t,e,r){let o=`
     <${r} style="${u(e)}">
     ${t}
     </${r}>
@@ -159,6 +159,6 @@ class g{constructor(t){this.$element=document.querySelector(t)}render(t){t.forEa
 //   //     break;
 //   // }
 // });
-//# sourceMappingURL=index.0af24e75.js.map
+//# sourceMappingURL=index.3093ac92.js.map
 
-//# sourceMappingURL=index.0af24e75.js.map
+//# sourceMappingURL=index.3093ac92.js.map
